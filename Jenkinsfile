@@ -11,14 +11,14 @@ node {
 
     stage('Test') {
         try{
-            sh './gradlew check'
+            sh 'gradlew check'
         } finally {
             junit 'build/test-results/**/*.xml'
         }
     }
 
     stage('Build') {
-        sh './gradlew build -x test'
+        sh 'gradlew build -x test'
 
     }
 
